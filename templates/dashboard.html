@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block content %}
+<h1>Analytics Dashboard</h1>
+
+<h2>Visits per App</h2>
+<div
+  hx-get="{{ url_for('visits_partial') }}"
+  hx-trigger="load, every 10s"
+  hx-target="this"
+>
+  <span class="htmx-indicator">Updating visits…</span>
+  {% include 'partials/_visits.html' %}
+</div>
+
+<h2>Pages per App</h2>
+<div
+  hx-get="{{ url_for('pages_partial') }}"
+  hx-trigger="load, every 10s"
+  hx-target="this"
+>
+  <span class="htmx-indicator">Refreshing pages…</span>
+  {% include 'partials/_pages.html' %}
+</div>
+
+<h2>Traffic Trends</h2>
+<div
+  hx-get="{{ url_for('traffic_partial') }}"
+  hx-trigger="load, every 15s"
+  hx-target="this"
+>
+  <span class="htmx-indicator">Loading traffic data…</span>
+  {% include 'partials/_traffic.html' %}
+</div>
+
+<h2>Top Referrers</h2>
+<div
+  hx-get="{{ url_for('referrers_partial') }}"
+  hx-trigger="load, every 15s"
+  hx-target="this"
+>
+  <span class="htmx-indicator">Fetching referrers…</span>
+  {% include 'partials/_referrers.html' %}
+</div>
+<div style="margin-bottom: 15%"></div>
+
+<script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% if traffic_dict %}
+<script id="traffic-data" type="application/json">
+  {{ traffic_dict|tojson }}
+</script>
+<canvas id="trafficChart"></canvas>
+{% else %}
+<p>No traffic data yet.</p>
+{% endif %}

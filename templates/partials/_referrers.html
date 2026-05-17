@@ -1,0 +1,8 @@
+{% if top_referrers %}
+<script id="referrer-data" type="application/json">
+  {{ top_referrers|tojson }}
+</script>
+<canvas id="referrerChart"></canvas>
+{% else %}
+<p>No referrer data yet.</p>
+{% endif %}

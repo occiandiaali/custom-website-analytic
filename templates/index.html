@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% block content %}
+<h1>Welcome to Analytics</h1>
+<p>Track and visualize your app traffic easily.</p>
+<button hx-get="{{ url_for('dashboard') }}" hx-target="body">
+  View Dashboard
+</button>
+{% endblock %}

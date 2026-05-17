@@ -1,0 +1,33 @@
+<!-- <table>
+  <tr>
+    <th>App</th>
+    <th>Page</th>
+    <th>Hits</th>
+  </tr>
+  {% for app, page, hits in pages_per_app %}
+  <tr>
+    <td>{{ app }}</td>
+    <td>{{ page }}</td>
+    <td>{{ hits }}</td>
+  </tr>
+  {% endfor %}
+</table> -->
+
+{% if pages_per_app %}
+<table>
+  <tr>
+    <th>App</th>
+    <th>Page</th>
+    <th>Hits</th>
+  </tr>
+  {% for app, page, hits in pages_per_app %}
+  <tr>
+    <td>{{ app }}</td>
+    <td>{{ page }}</td>
+    <td>{{ hits }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>No page hits available yet.</p>
+{% endif %}

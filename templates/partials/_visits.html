@@ -1,0 +1,29 @@
+<!-- <table>
+  <tr>
+    <th>App</th>
+    <th>Visits</th>
+  </tr>
+  {% for app, visits in visits_per_app %}
+  <tr>
+    <td>{{ app }}</td>
+    <td>{{ visits }}</td>
+  </tr>
+  {% endfor %}
+</table> -->
+
+{% if visits_per_app %}
+<table>
+  <tr>
+    <th>App</th>
+    <th>Visits</th>
+  </tr>
+  {% for app, visits in visits_per_app %}
+  <tr>
+    <td>{{ app }}</td>
+    <td>{{ visits }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>No visits recorded yet.</p>
+{% endif %}
