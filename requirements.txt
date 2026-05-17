@@ -4,4 +4,4 @@ itsdangerous==2.1.2
 Werkzeug==3.0.1
 click==8.1.7
 flask_cors==6.0.2
-#htmx==1.9.10   # (optional, usually loaded via CDN, but you can pin if bundling)
+gunicorn
