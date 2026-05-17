@@ -1,6 +1,11 @@
 from flask import Flask, request, render_template
+import os
+
 import sqlite3
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -113,5 +118,9 @@ def traffic_partial():
 
 
 if __name__ == "__main__":
-    init_db()  # ✅ Call here before app.run()
-    app.run(debug=True)
+    init_db()  # initialize sqlite db here
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000)),
+        debug=True
+    )
